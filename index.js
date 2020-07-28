@@ -18,6 +18,7 @@ class HeaderScrollView extends Component {
     scrollContainerStyle: PropTypes.object,
     fadeDirection: PropTypes.string,
     scrollViewProps: PropTypes.object,
+    refreshControl: PropTypes.object
   };
 
   static defaultProps = {
@@ -70,6 +71,7 @@ class HeaderScrollView extends Component {
       scrollContainerStyle = {},
       fadeDirection,
       scrollViewProps = {},
+      refreshControl = {},
     } = this.props;
 
     const fontSize = titleStyle.fontSize || 34;
@@ -99,6 +101,7 @@ class HeaderScrollView extends Component {
           </Fade>
         </View>
         <ScrollView
+          refreshControl={refreshControl}
           onScroll={Animated.event(
             [
               {
